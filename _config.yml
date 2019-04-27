@@ -140,7 +140,7 @@ neat_js:
   compress:
   exclude:
     - '**/*.min.js'
-    - '**/jquery.fancybox.pack.js'
-    - '**/index.js'  
+    # - '**/jquery.fancybox.pack.js'
+    # - '**/index.js'  
     - '**/clicklove.js'
     - '**/matery.js'
