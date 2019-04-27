@@ -11,20 +11,4 @@ install:
 
 script:
   - hexo g
-
-after_script:
-  - cd ./public
-  - git init
-  - git config user.name "zhudk"
-  - git config user.email "1126572821@qq.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://5P2ropJqjBGIAIRJrc5_AQ@github.com/lumiazdk/lumiazdk.github.io" master:master
-# E: Build LifeCycle
-
-branches:
-  only:
-    - master
-env:
- global:
-   - GH_REF: git@github.com:lumiazdk/lumiazdk.github.io.git
+  - hexo d
