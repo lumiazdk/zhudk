@@ -18,7 +18,7 @@ script:
   - hexo g
 
 after_script:
-  - git clone https://${GH_REF} .deploy_git  # GH_REF是最下面配置的仓库地址
+  - git clone https://git@github.com:lumiazdk/lumiazdk.github.io.git .deploy_git  # GH_REF是最下面配置的仓库地址
   - cd .deploy_git
   - git checkout master
   - cd ../
@@ -28,11 +28,8 @@ after_script:
   - git config user.email "11265728210@qq.com"  #修改email
   - git add .
   - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"  # 提交记录包含时间 跟上面更改时区配合
-  - git push --force --quiet "https://${5P2ropJqjBGIAIRJrc5_AQ}@${GH_REF}" master:master  #Travis_Token是在Travis中配置环境变量的名称
+  - git push --force --quiet "https://git@github.com:lumiazdk/lumiazdk.github.io.git@5P2ropJqjBGIAIRJrc5_AQ" master:master  #Travis_Token是在Travis中配置环境变量的名称
 
 branches:
   only:
     - master  #只监测master分支，master是我的分支的名称，可根据自己情况设置
-env:
- global:
-   - GH_REF: git@github.com:lumiazdk/lumiazdk.github.io.git  #设置GH_REF，注意更改yourname
