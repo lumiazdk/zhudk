@@ -1,42 +1,30 @@
-language: node_js #使用Node语言环境
-node_js: stable #安装稳定版Node
-
-sudo: false
-
-#cache 启用缓存，加快构建速度
-cache:
-  directories:
-    - "node_modules"
-
-notifications: #启用通知
-  email:
-    recipients:
-      - snippet@91h5.cc #接收构建消息的邮件 不需要可设置为false
-    on_success: never #部署成功时，可设置alway never change
-    on_failure: always #部署失败时，同上
+language: node_js
+node_js: stable
 
 # S: Build Lifecycle
 install:
-  - npm install  #安装依赖
+  - npm install
 
-before_script:
-  - export TZ='Asia/Shanghai' #设置时区
-  # - npm install -g gulp  #全局安装Gulp
-  - chmod +x _travis.sh  #授权脚本执行权限
+
+#before_script:
+ # - npm install -g gulp
 
 script:
-  - hexo clean && hexo g #清除缓存并生成静态文件
-  # - gulp #执行gulp任务
-
-# after_success: #执行成功时(以后扩展功能使用)
+  - hexo g
 
 after_script:
-  - ./_travis.sh #执行部署脚本
+  - cd ./public
+  - git init
+  - git config user.name "zhudk"
+  - git config user.email "1126572821@qq.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://5P2ropJqjBGIAIRJrc5_AQ@git@github.com:lumiazdk/lumiazdk.github.io.git" master:master
 # E: Build LifeCycle
 
 branches:
   only:
-    - master #需要监听部署的分支
+    - master
 env:
-  global:
-   - GH_REF: git@github.com:lumiazdk/lumiazdk.github.io.git #更改为自己git地址
+ global:
+   - GH_REF: git@github.com:lumiazdk/lumiazdk.github.io.git
