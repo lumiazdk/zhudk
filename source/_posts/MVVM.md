@@ -2,6 +2,7 @@
 title: 实现MVVM
 tags: vue
 categories: 前端
+img: https://res.cloudinary.com/lumiazdk/image/upload/v1556359708/blog/xavkfbcqwernwc7woo3z.jpg
 ---
 ## 为什么要手写MVVM?
 > 因为我要在公司项目中使用，哈哈哈哈哈！
