@@ -1,9 +1,11 @@
 ---
 title: 实现MVVM
+tags: vue
+categories: 前端
 ---
-# 为什么要手写MVVM?
+## 为什么要手写MVVM?
 > 因为我要在公司项目中使用，哈哈哈哈哈！
-# 数据劫持
+## 数据劫持
 ```js
 class Observer {
     constructor(data) {
@@ -49,7 +51,7 @@ class Observer {
     }
 }
 ```
-# 编译
+## 编译
 ```js
 CompileUtil = {};
 
@@ -147,4 +149,4 @@ CompileUtil.on = function (node, vm, exp) {
     });
 }
 ```
-> 更多内容见 [github](https://github.com/lumiazdk/MVVM)
+## 更多内容见 [github](https://github.com/lumiazdk/MVVM)
