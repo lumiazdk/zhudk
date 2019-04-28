@@ -697,6 +697,7 @@ article .card {
 
 article .card-image {
     background-color: #222;
+    border-radius: 6px;
 }
 
 article .card-image img {
